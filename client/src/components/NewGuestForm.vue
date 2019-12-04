@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="" v-on:submit="handleGuest" method="post">
+  <form class="" v-on:submit.prevent="handleGuest" method="post">
     <label for="name">Guest Name:</label>
     <input type="text" id="name" v-model="name">
 
@@ -16,6 +16,7 @@
 
 <script>
 import {eventBus} from "../main.js"
+import GuestService from "../services/GuestService.js"
 
 export default {
   name: "new-guest-form",
@@ -26,7 +27,18 @@ export default {
     status: false
     }
   },
-  
+  methods: {
+    handleGuest(){
+      const guest = {
+        name: this.name,
+        email: this.email,
+        status: this.status
+      }
+      GuestService.addGuest(guest)
+      .then(res => eventBus.$emit("new-guest", res))
+    }
+  }
+
 
 
 }

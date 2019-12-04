@@ -12,6 +12,7 @@
 import NewGuestForm from "./components/NewGuestForm.vue";
 import GuestList from "./components/GuestList.vue";
 import GuestService from "./services/GuestService.js";
+import {eventBus} from "./main.js";
 
 export default {
   name: "app",
@@ -28,6 +29,9 @@ export default {
   mounted(){
     this.getBookings();
 
+    eventBus.$on("new-guest", (guest) => {
+      this.guests.push(guest)
+    })
   },
   methods: {
     getBookings(){
