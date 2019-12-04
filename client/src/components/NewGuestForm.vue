@@ -10,12 +10,20 @@
     <input type="radio" id="status" v-model="status">
 
     <input type="submit" id="save" value="Register">
-    
+
   </form>
 </template>
 
 <script>
 export default {
+  name: "new-guest-form",
+  data() {
+    return {
+    name: "",
+    email: "",
+    status: false
+    }
+  }
 }
 </script>
 
