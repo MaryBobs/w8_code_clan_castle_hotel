@@ -33,8 +33,9 @@ export default {
       this.guests.push(guest)
     })
 
-    eventBus.$on("delete-guest", (guest) => {
-      this.guests.splice(guest, 1)
+    eventBus.$on("delete-guest", (id) => {
+      const index = this.guests.indexOf(guest => guest._id === id)
+      this.guests.splice(index, 1)
     })
   },
   methods: {

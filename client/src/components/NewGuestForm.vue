@@ -36,6 +36,7 @@ export default {
       }
       GuestService.addGuest(guest)
       .then(res => eventBus.$emit("new-guest", res))
+      
     }
   }
 

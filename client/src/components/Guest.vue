@@ -17,7 +17,7 @@ export default {
   methods: {
     handleDelete() {
       GuestService.removeGuest(this.guest._id)
-      .then(res => eventBus.$emit("delete-guest", res))
+      .then(() => eventBus.$emit("delete-guest", this.guest._id))
     }
   }
 }

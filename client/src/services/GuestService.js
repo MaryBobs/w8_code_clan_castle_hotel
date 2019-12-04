@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api/guests"
+const baseURL = "http://localhost:3000/api/guests/"
 
 export default {
   getGuests(){
@@ -17,7 +17,6 @@ export default {
     return fetch(baseURL + id, {
       method: "DELETE"
     })
-    .then(res => res.json())
   }
 
 }
