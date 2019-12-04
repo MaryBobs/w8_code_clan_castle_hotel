@@ -11,6 +11,7 @@
 <script>
 import NewGuestForm from "./components/NewGuestForm.vue";
 import GuestList from "./components/GuestList.vue";
+import GuestService from "./services/GuestService.js";
 
 export default {
   name: "app",
@@ -19,7 +20,11 @@ export default {
   },
   components: {
     "new-guest-form": NewGuestForm,
-    "guest-list": GuestList
+    "guest-list": GuestList,
+    "guest-service": GuestService
+  },
+  mounted(){
+    GuestService.getGuests();
   }
 }
 </script>
