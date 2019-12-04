@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="" v-on:submit="" method="post">
+  <form class="" v-on:submit="handleGuest" method="post">
     <label for="name">Guest Name:</label>
     <input type="text" id="name" v-model="name">
 
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import {eventBus} from "../main.js"
+
 export default {
   name: "new-guest-form",
   data() {
@@ -23,7 +25,10 @@ export default {
     email: "",
     status: false
     }
-  }
+  },
+  
+
+
 }
 </script>
 
