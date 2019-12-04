@@ -32,6 +32,10 @@ export default {
     eventBus.$on("new-guest", (guest) => {
       this.guests.push(guest)
     })
+
+    eventBus.$on("delete-guest", (guest) => {
+      this.guests.splice(guest, 1)
+    })
   },
   methods: {
     getBookings(){
