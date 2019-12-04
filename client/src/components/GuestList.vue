@@ -22,4 +22,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  #guest-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+  }
 </style>

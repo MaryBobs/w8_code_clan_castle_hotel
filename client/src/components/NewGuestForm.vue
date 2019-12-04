@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="" v-on:submit.prevent="handleGuest" method="post">
+  <form v-on:submit.prevent="handleGuest" method="post">
     <label for="name">Guest Name:</label>
     <input type="text" id="name" v-model="name" required>
 
@@ -46,4 +46,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 1em;
+    border: 2px solid;
+    border-radius: 5%;
+    justify-content: flex-start;
+  }
 </style>

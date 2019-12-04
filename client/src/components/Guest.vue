@@ -27,4 +27,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+li {
+  margin: 5px;
+  padding: 1em;
+  border: 2px solid;
+  border-radius: 5%;
+}
 </style>

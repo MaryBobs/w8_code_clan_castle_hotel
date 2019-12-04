@@ -3,8 +3,10 @@
     <div id="header">
       <h1>CodeClan Castle Hotel</h1>
     </div>
+    <div id="body">
     <new-guest-form />
     <guest-list :guests="guests"/>
+    </div>
   </div>
 </template>
 
@@ -49,4 +51,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  #app {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+  }
+  #body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  }
+
 </style>
