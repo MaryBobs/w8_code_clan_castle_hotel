@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="list-item">
+  <div id="guest">
     <li>
       <h3>{{guest.name}}</h3>
     </li>

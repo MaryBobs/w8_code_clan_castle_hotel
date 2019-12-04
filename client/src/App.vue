@@ -4,7 +4,7 @@
       <h1>CodeClan Castle Hotel</h1>
     </div>
     <new-guest-form />
-    <guest-list />
+    <guest-list :guests="guests"/>
   </div>
 </template>
 
@@ -16,7 +16,9 @@ import GuestService from "./services/GuestService.js";
 export default {
   name: "app",
   data(){
+    return {
     guests: []
+    }
   },
   components: {
     "new-guest-form": NewGuestForm,
@@ -24,9 +26,17 @@ export default {
     "guest-service": GuestService
   },
   mounted(){
-    GuestService.getGuests();
+    this.getBookings();
+
+  },
+  methods: {
+    getBookings(){
+      GuestService.getGuests()
+      .then(guests => this.guests = guests)
+      }
+    }
   }
-}
+
 </script>
 
 <style lang="css" scoped>
