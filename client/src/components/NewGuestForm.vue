@@ -1,10 +1,10 @@
 <template lang="html">
   <form class="" v-on:submit.prevent="handleGuest" method="post">
     <label for="name">Guest Name:</label>
-    <input type="text" id="name" v-model="name">
+    <input type="text" id="name" v-model="name" required>
 
     <label for="email">Email address:</label>
-    <input type="text" id="email" v-model="email">
+    <input type="text" id="email" v-model="email" required>
 
     <label for="status">Checked In:</label>
     <input type="radio" id="status" v-model="status">
@@ -36,7 +36,7 @@ export default {
       }
       GuestService.addGuest(guest)
       .then(res => eventBus.$emit("new-guest", res))
-      
+
     }
   }
 
